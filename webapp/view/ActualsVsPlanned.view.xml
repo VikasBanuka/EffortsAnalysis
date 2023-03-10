@@ -1,0 +1,64 @@
+<mvc:View controllerName="cis.effortsanalysis.controller.ActualsVsPlanned" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Page id="page" title="{i18n>ActualsVsPlanned}">
+        <content>
+            <Table id="idActualsVsPlannedTable" class="sapUiSmallMarginEnd" mode="None" inset="false" sticky="ColumnHeaders" items="{actualsVsPlannedView>/actualsVsPlannedData}" growing="true" growingScrollToLoad="true" width="auto">
+                <columns>
+                    <Column width="12em">
+                        <Text text="Order" />
+                    </Column>
+                    <Column>
+                        <Text text="Object number" />
+                    </Column>
+                    <Column>
+                        <Text text="Fiscal Year" />
+                    </Column>
+                    <Column>
+                        <Text text="Value Type" />
+                    </Column>
+                    <Column>
+                        <Text text="Version" />
+                    </Column>
+                    <Column>
+                        <Text text="Partner Object" />
+                    </Column>
+                    <Column>
+                        <Text text="Source Object" />
+                    </Column>
+                    <Column>
+                        <Text text="Trans. Currency" />
+                    </Column>
+                    <Column>
+                        <Text text="Period Block" />
+                    </Column>
+                    <Column>
+                        <Text text="Unit of Measure" />
+                    </Column>
+                    <Column>
+                        <Text text="Plan Value TranCurr" />
+                    </Column>
+                    <Column>
+                        <Text text="Actual Value TranCurr" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" press=".showSupplierDetail">
+                        <cells>
+                            <Text text="{actualsVsPlannedView>Aufnr}" />
+                            <Text text="{actualsVsPlannedView>Objnr}" />
+                            <Text text="{actualsVsPlannedView>Gjahr}" />
+                            <Text text="{actualsVsPlannedView>Wrttp}" />
+                            <Text text="{actualsVsPlannedView>Versn}" />
+                            <Text text="{actualsVsPlannedView>Parob}" />
+                            <Text text="{actualsVsPlannedView>Uspob}" />
+                            <Text text="{actualsVsPlannedView>Twaer}" />
+                            <Text text="{actualsVsPlannedView>Perbl}" />
+                            <Text text="{actualsVsPlannedView>Meinh}" />
+                            <Text text="{actualsVsPlannedView>Plan}" />
+                            <Text text="{actualsVsPlannedView>Actual}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        </Page>
+</mvc:View>        
