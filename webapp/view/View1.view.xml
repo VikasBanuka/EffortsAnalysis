@@ -1,90 +1,22 @@
-<mvc:View controllerName="cis.effortsanalysis.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content>
-         <Table id="idServiceOrders" class="sapUiSmallMarginEnd" mode="None" inset="false" sticky="ColumnHeaders" growing="true" growingScrollToLoad="true" items="{
-										path: '/ServiceOrdersSet', events:{dataReceived:'.dataReceived'}
-									}" width="auto">
-                <headerToolbar>
-                    <OverflowToolbar>
-                        <Text id="idOrdersText" />
-                        <ToolbarSpacer />
-                    </OverflowToolbar>
-                </headerToolbar>
-                <columns>
-                    <Column width="12em">
-                        <Text text="Order" />
-                    </Column>
-                    <Column>
-                        <Text text="Order Type" />
-                    </Column>
-                    <Column>
-                        <Text text="Order category" />
-                    </Column>
-                    <Column>
-                        <Text text="Order" />
-                    </Column>
-                    <Column>
-                        <Text text="Entered By" />
-                    </Column>
-                    <Column>
-                        <Text text="Created On" />
-                    </Column>
-                    <Column>
-                        <Text text="Changed By" />
-                    </Column>
-                    <Column>
-                        <Text text="Company Code" />
-                    </Column>
-                    <Column>
-                        <Text text="Plant" />
-                    </Column>
-                    <Column>
-                        <Text text="Business Area" />
-                    </Column>
-                    <Column>
-                        <Text text="CO Area" />
-                    </Column>
-                    <Column>
-                        <Text text="Currency" />
-                    </Column>
-                    <Column>
-                        <Text text="Status" />
-                    </Column>
-                    <Column>
-                        <Text text="Cost Center" />
-                    </Column>
-                    <Column>
-                        <Text text="G/L Account" />
-                    </Column>
-                </columns>
-                <items>
-                    <ColumnListItem type="Navigation" press=".showActualsVsPlanned">
-                        <cells>
-                            <Text text="{Aufnr}" />
-                            <Text text="{Aurat}" />
-                            <Text text="{Autyp}" />
-                            <Text text="{Refnr}" />
-                            <Text text="{Ernam}" />
-                            <Text text="{path : 'Erdat',
-                                type : 'sap.ui.model.type.Date',
-                                formatOptions: {
-                                    style : 'medium'
-                                }}" />
-                            <Text text="{Aenam}" />
-                            <Text text="{Bukrs}" />
-                            <Text text="{Werks}" />
-                            <Text text="{Gsber}" />
-                            <Text text="{Kokrs}" />
-                            <Text text="{Waers}" />
-                            <Text text="{Astnr}" />
-                            <Text text="{Kostl}" />
-                            <Text text="{Saknr}" />
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
-        </content>
-    </Page>
+<mvc:View controllerName="cis.effortsanalysis.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.f" xmlns:smartVariantManagement="sap.ui.comp.smartvariants">
+    <f:DynamicPage busy="{appView>/busy}" busyIndicatorDelay="{appView>/delay}" headerExpanded="true">
+        <f:title>
+            <f:DynamicPageTitle />
+        </f:title>
+
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <VBox>
+                        <smartVariantManagement:SmartVariantManagement id="PlanningVariant" select="onVariantSelect" persistencyKey="PlanningKey" />
+                        <core:Fragment fragmentName="cis.effortsanalysis.fragment.SmartFilter" type="XML" />
+                    </VBox>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <core:Fragment fragmentName="cis.effortsanalysis.fragment.SmartTable" type="XML" />
+        </f:content>
+        <f:footer />
+    </f:DynamicPage>
 </mvc:View>

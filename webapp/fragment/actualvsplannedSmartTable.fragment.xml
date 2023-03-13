@@ -1,0 +1,116 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:commons="sap.suite.ui.commons" xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:table="sap.ui.table">
+    <smartTable:SmartTable
+        id="ActualsVsPlannedAnalysisTable"
+        ignoreFromPersonalisation=""
+        showFullScreenButton="true"
+        requestAtLeastFields="Aufnr,Objnr,Gjahr,Wrttp,Versn,Parob,Uspob,Twaer,Perbl,Meinh,Plan,Actual"
+        entitySet="zplanSet"
+        smartFilterId="smartFilterBar"
+        header="{i18n>ActualsVsPlannedData}"
+        customData:p13nDialogSettings='{filter:{visible:false},sort:{visible:false}}'
+        persistencyKey="MyEscalationsSmartTable"
+        enableAutoBinding="true"
+        beforeRebindTable=".onBeforeActualsVsPlannedRebindTable"
+        height="100%"
+    >
+        <smartTable:customToolbar>
+            <OverflowToolbar design="Transparent">
+                <ToolbarSpacer />
+            </OverflowToolbar>
+        </smartTable:customToolbar>
+        <Table id="idActualsVsPlannedTable"  fixedLayout="false" mode="SingleSelectMaster" class="sapUiSmallMarginEnd" inset="false" sticky="ColumnHeaders" growing="true" growingScrollToLoad="true" width="auto">
+            <columns>
+                <Column width="5em">
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Aufnr", "columnIndex":"0", "leadingProperty": "Aufnr","customColumn":true}' />
+                    </customData>
+                    <Text text="Order" />
+                </Column>
+                <Column>
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Objnr", "columnIndex":"1", "leadingProperty": "Objnr","customColumn":true}' />
+                    </customData>
+                    <Text text="Object number" />
+                </Column>
+                <Column>
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Gjahr", "columnIndex":"2", "leadingProperty": "Gjahr","customColumn":true}' />
+                    </customData>
+                    <Text text="Fiscal Year" />
+                </Column>
+                <Column>
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Wrttp", "columnIndex":"3", "leadingProperty": "Wrttp","customColumn":true}' />
+                    </customData>
+                    <Text text="Value Type" />
+                </Column>
+                <Column>
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Versn", "columnIndex":"4", "leadingProperty": "Versn","customColumn":true}' />
+                    </customData>
+                    <Text text="Version" />
+                </Column>
+                <Column>
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Parob", "columnIndex":"5", "leadingProperty": "Parob","customColumn":true}' />
+                    </customData>
+                    <Text text="Partner Object" />
+                </Column>
+                <Column>
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Uspob", "columnIndex":"6", "leadingProperty": "Uspob","customColumn":true}' />
+                    </customData>
+                    <Text text="Source Object" />
+                </Column>
+                <Column>
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Twaer", "columnIndex":"7", "leadingProperty": "Twaer","customColumn":true}' />
+                    </customData>
+                    <Text text="Trans. Currency" />
+                </Column>
+                <Column>
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Perbl", "columnIndex":"8", "leadingProperty": "Perbl","customColumn":true}' />
+                    </customData>
+                    <Text text="Period Block" />
+                </Column>
+                <Column>
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Meinh", "columnIndex":"9", "leadingProperty": "Meinh","customColumn":true}' />
+                    </customData>
+                    <Text text="Unit of Measure" />
+                </Column>
+                <Column>
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Plan", "columnIndex":"10", "leadingProperty": "Plan","customColumn":true}' />
+                    </customData>
+                    <Text text="Plan Value TranCurr" />
+                </Column>
+                <Column>
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Actual", "columnIndex":"11", "leadingProperty": "Actual","customColumn":true}' />
+                    </customData>
+                    <Text text="Actual Value TranCurr" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text="{Aufnr}" />
+                        <Text text="{Objnr}" />
+                        <Text text="{Gjahr}" />
+                        <Text text="{Wrttp}" />
+                        <Text text="{Versn}" />
+                        <Text text="{Parob}" />
+                        <Text text="{Uspob}" />
+                        <Text text="{Twaer}" />
+                        <Text text="{Perbl}" />
+                        <Text text="{Meinh}" />
+                        <Text text="{Plan}" />
+                        <Text text="{Actual}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </smartTable:SmartTable>
+</core:FragmentDefinition>

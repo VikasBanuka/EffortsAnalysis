@@ -25,6 +25,21 @@
                     "odataVersion": "2.0"
                 }
             }
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "cis-effortsanalysis-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "ciseffortsanalysis",
+                    "action": "Display",
+                    "title": "{{flpTitle}}",
+                    "subTitle": "{{flpSubtitle}}",
+                    "icon": ""
+                }
+            }
         }
     },
     "sap.ui": {
@@ -94,10 +109,10 @@
             },
             "routes": [
                 {
-                    "name": "RouteView1",
+                    "name": "OrdersView",
                     "pattern": ":?query:",
                     "target": [
-                        "TargetView1"
+                        "OrdersView"
                     ]
                 },
                 {
@@ -109,7 +124,7 @@
                 }
             ],
             "targets": {
-                "TargetView1": {
+                "OrdersView": {
                     "viewType": "XML",
                     "transition": "slide",
                     "clearControlAggregation": false,

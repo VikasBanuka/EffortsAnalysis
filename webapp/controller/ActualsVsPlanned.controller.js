@@ -1,5 +1,5 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "./BaseController",
     "sap/ui/model/json/JSONModel",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
@@ -7,10 +7,10 @@ sap.ui.define([
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, Filter, FilterOperator) {
+    function (BaseController, JSONModel, Filter, FilterOperator) {
         "use strict";
 
-        return Controller.extend("cis.effortsanalysis.controller.ActualsVsPlanned", {
+        return BaseController.extend("cis.effortsanalysis.controller.ActualsVsPlanned", {
             onInit: function(){
                 const oViewModel = new JSONModel({
 					busy: false,
@@ -25,6 +25,13 @@ sap.ui.define([
             },
             _onRouteMatched: function(oEvent){
                 const sOrderNo = oEvent.getParameter("arguments").orderNo;
+				// this._sOrderNo = sOrderNo;
+				// this.byId("ActualsVsPlannedAnalysisTable").rebindTable();
+				// this.byId("ActualsVsPlannedAnalysisTable").addEventDelegate({
+				// 	onAfterRendering: function () {
+				// 		this.byId("ActualsVsPlannedAnalysisTable").rebindTable();
+				// 	}
+				// }, this);
                 this.getView().getModel()
 					.metadataLoaded()
 					.then(
@@ -44,5 +51,15 @@ sap.ui.define([
 						}.bind(this)
 					);
             },
+			onBeforeActualsVsPlannedRebindTable: function(oEvent){
+				const sOrderNo = this._sOrderNo;
+				const mBindingParams = oEvent.getParameter("bindingParams");
+				let oFilter = new Filter("Aufnr", FilterOperator.EQ, sOrderNo);
+				mBindingParams.filters.push(oFilter);
+				const oSmartTable = this.byId("ActualsVsPlannedAnalysisTable");
+				oSmartTable.getTable().rerender();
+			},
+			
+			
     });
     });

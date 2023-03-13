@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog multiSelect="{appView>/multiSelectValueHelp}" rememberSelections="true" class="sapUiPopupWithPadding" growing="true" noDataText="{i18n>labelnoData}" search="handleValueHelpSearch" liveChange="handleValueHelpSearch" confirm="handleValueHelpClose($event, 'Confirm')" cancel="handleValueHelpClose($event, 'Cancel')" />
+</core:FragmentDefinition>

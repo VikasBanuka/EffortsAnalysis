@@ -1,28 +1,28 @@
-<mvc:View controllerName="cis.effortsanalysis.controller.ActualsVsPlanned" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-    <Page id="page" title="{i18n>ActualsVsPlanned}">
-        <content>
+<mvc:View controllerName="cis.effortsanalysis.controller.ActualsVsPlanned" xmlns:l="sap.ui.layout" xmlns:f="sap.f" xmlns:smartVariantManagement="sap.ui.comp.smartvariants" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <f:DynamicPage busy="{appView>/busy}" busyIndicatorDelay="{appView>/delay}" headerExpanded="true">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Actuals Vs Planned" />
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <f:content>
+            <!-- <core:Fragment fragmentName="cis.effortsanalysis.fragment.actualvsplannedSmartTable" type="XML" /> -->
             <Table id="idActualsVsPlannedTable" class="sapUiSmallMarginEnd" mode="None" inset="false" sticky="ColumnHeaders" items="{actualsVsPlannedView>/actualsVsPlannedData}" growing="true" growingScrollToLoad="true" width="auto">
                 <columns>
                     <Column width="12em">
                         <Text text="Order" />
                     </Column>
                     <Column>
-                        <Text text="Object number" />
+                        <Text text="Cost Element" />
+                    </Column>
+                    <Column>
+                        <Text text="Element Description" />
                     </Column>
                     <Column>
                         <Text text="Fiscal Year" />
-                    </Column>
-                    <Column>
-                        <Text text="Value Type" />
-                    </Column>
-                    <Column>
-                        <Text text="Version" />
-                    </Column>
-                    <Column>
-                        <Text text="Partner Object" />
-                    </Column>
-                    <Column>
-                        <Text text="Source Object" />
                     </Column>
                     <Column>
                         <Text text="Trans. Currency" />
@@ -41,15 +41,12 @@
                     </Column>
                 </columns>
                 <items>
-                    <ColumnListItem type="Navigation" press=".showSupplierDetail">
+                    <ColumnListItem>
                         <cells>
                             <Text text="{actualsVsPlannedView>Aufnr}" />
-                            <Text text="{actualsVsPlannedView>Objnr}" />
+                            <Text text="{actualsVsPlannedView>Kstar}" />
+                            <Text text="{actualsVsPlannedView>Ktext}" />
                             <Text text="{actualsVsPlannedView>Gjahr}" />
-                            <Text text="{actualsVsPlannedView>Wrttp}" />
-                            <Text text="{actualsVsPlannedView>Versn}" />
-                            <Text text="{actualsVsPlannedView>Parob}" />
-                            <Text text="{actualsVsPlannedView>Uspob}" />
                             <Text text="{actualsVsPlannedView>Twaer}" />
                             <Text text="{actualsVsPlannedView>Perbl}" />
                             <Text text="{actualsVsPlannedView>Meinh}" />
@@ -59,6 +56,8 @@
                     </ColumnListItem>
                 </items>
             </Table>
-        </content>
-        </Page>
-</mvc:View>        
+            <!-- </content>
+        </Page> -->
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
