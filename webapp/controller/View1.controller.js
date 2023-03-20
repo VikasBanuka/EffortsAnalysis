@@ -20,6 +20,7 @@ sap.ui.define([
 		 * @private
 		 */
 		_onRouteMatched: function () {
+			this.byId("idOrdersTable").clearSelection();
             this.byId("smartFilterBar").addEventDelegate({
                 onAfterRendering: function () {
                     this.attachTokenValidatorForFilterbar(

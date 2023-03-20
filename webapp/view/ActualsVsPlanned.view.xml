@@ -1,5 +1,5 @@
-<mvc:View controllerName="cis.effortsanalysis.controller.ActualsVsPlanned" xmlns:l="sap.ui.layout" xmlns:f="sap.f" xmlns:smartVariantManagement="sap.ui.comp.smartvariants" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-    <f:DynamicPage busy="{appView>/busy}" busyIndicatorDelay="{appView>/delay}" headerExpanded="true">
+<mvc:View controllerName="cis.effortsanalysis.controller.ActualsVsPlanned" xmlns:l="sap.ui.layout" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f" xmlns:smartVariantManagement="sap.ui.comp.smartvariants" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <!-- <f:DynamicPage busy="{appView>/busy}" busyIndicatorDelay="{appView>/delay}" headerExpanded="true">
         <f:title>
             <f:DynamicPageTitle>
                 <f:heading>
@@ -8,7 +8,10 @@
             </f:DynamicPageTitle>
         </f:title>
 
-        <f:content>
+        <f:content> -->
+        	<Page
+		title="Actuals Vs Planned" showNavButton="true" navButtonPress=".onNavBackToOrdersScreen">
+        <content>
             <!-- <core:Fragment fragmentName="cis.effortsanalysis.fragment.actualvsplannedSmartTable" type="XML" /> -->
             <Table id="idActualsVsPlannedTable" class="sapUiSmallMarginEnd" mode="None" inset="false" sticky="ColumnHeaders" items="{actualsVsPlannedView>/actualsVsPlannedData}" growing="true" growingScrollToLoad="true" width="auto">
                 <columns>
@@ -35,9 +38,15 @@
                     </Column>
                     <Column>
                         <Text text="Plan Value TranCurr" />
+                        <footer>
+                            <ObjectNumber number="{actualsVsPlannedView>/lastRowContext/Plan}"/>
+                        </footer>
                     </Column>
                     <Column>
                         <Text text="Actual Value TranCurr" />
+                        <footer>
+                            <ObjectNumber number="{actualsVsPlannedView>/lastRowContext/Actual}"/>
+                        </footer>
                     </Column>
                 </columns>
                 <items>
@@ -56,8 +65,15 @@
                     </ColumnListItem>
                 </items>
             </Table>
-            <!-- </content>
-        </Page> -->
-        </f:content>
-    </f:DynamicPage>
+            <VBox>
+            <OverflowToolbar>
+            <ToolbarSpacer/>
+            <Text id="idSumofActuals"/>
+            <Text id="idSumofPlanned"/>
+            </OverflowToolbar>
+            </VBox>
+            </content>
+            </Page>
+         <!-- </f:content>
+    </f:DynamicPage> -->
 </mvc:View>

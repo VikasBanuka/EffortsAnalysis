@@ -43,7 +43,10 @@ sap.ui.define([
 							this.getOwnerComponent().getModel().read("/zplanSet", {
 								filters:aFilters,
 								success: function(oResponse){
-									that.getView().getModel("actualsVsPlannedView").setProperty("/actualsVsPlannedData", oResponse.results);
+									let aResults = oResponse.results.slice(0);
+									let olastRowContext = oResponse.results[oResponse.results.length-1];
+									that.getView().getModel("actualsVsPlannedView").setProperty("/actualsVsPlannedData", aResults.toSpliced(aResults.length-1));
+									that.getView().getModel("actualsVsPlannedView").setProperty("/lastRowContext",olastRowContext);
 								},error: function(oError){
 									debugger;
 								},
@@ -59,7 +62,9 @@ sap.ui.define([
 				const oSmartTable = this.byId("ActualsVsPlannedAnalysisTable");
 				oSmartTable.getTable().rerender();
 			},
-			
+			onNavBackToOrdersScreen: function(oEvent){
+				this.getOwnerComponent().getRouter().navTo("OrdersView");
+			},
 			
     });
     });

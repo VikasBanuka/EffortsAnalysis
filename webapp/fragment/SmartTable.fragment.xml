@@ -19,93 +19,94 @@
                 <ToolbarSpacer />
             </OverflowToolbar>
         </smartTable:customToolbar>
-        <Table selectionChange=".showActualsVsPlanned" fixedLayout="false" mode="SingleSelectMaster" sticky="ColumnHeaders" growing="true" growingScrollToLoad="true" >
+        <Table id="idOrdersTable" selectionChange=".showActualsVsPlanned" rememberSelections="false" fixedLayout="false" mode="SingleSelectMaster" sticky="ColumnHeaders" growing="true" growingScrollToLoad="true" >
             <columns>
                 <!-- Flag -->
+                <Column mergeDuplicates="true" width="10rem">
+                    <customData>
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Kostv", "columnIndex":"0", "leadingProperty": "Kostv","customColumn":true}' />
+                    </customData>
+                    <Text text="{i18n>Kostl}" />
+                </Column>
                 <Column width="5rem">
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Aufnr", "columnIndex":"0", "leadingProperty": "Aufnr","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Aufnr", "columnIndex":"1", "leadingProperty": "Aufnr","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Aufnr}" />
                 </Column>
                 <Column >
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Auart", "columnIndex":"1", "leadingProperty": "Auart","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Auart", "columnIndex":"2", "leadingProperty": "Auart","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Auart}" />
                 </Column>
                 <Column >
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Autyp", "columnIndex":"2", "leadingProperty": "Autyp","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Autyp", "columnIndex":"3", "leadingProperty": "Autyp","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Autyp}" />
                 </Column>
                 <Column>
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Refnr", "columnIndex":"3", "leadingProperty": "Refnr","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Refnr", "columnIndex":"4", "leadingProperty": "Refnr","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Refnr}" />
                 </Column>
                 <Column >
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Ernam", "columnIndex":"4", "leadingProperty": "Ernam","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Ernam", "columnIndex":"5", "leadingProperty": "Ernam","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Ernam}" />
                 </Column>
                 <Column>
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Erdat", "columnIndex":"5", "leadingProperty": "Erdat","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Erdat", "columnIndex":"6", "leadingProperty": "Erdat","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Erdat}" />
                 </Column>
                 <Column>
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Aenam", "columnIndex":"6", "leadingProperty": "Aenam","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Aenam", "columnIndex":"7", "leadingProperty": "Aenam","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Aenam}" />
                 </Column>
                 <Column>
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Bukrs", "columnIndex":"7", "leadingProperty": "Bukrs","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Bukrs", "columnIndex":"8", "leadingProperty": "Bukrs","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Bukrs}" />
                 </Column>
                 <Column>
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Werks", "columnIndex":"8", "leadingProperty": "Werks","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Werks", "columnIndex":"9", "leadingProperty": "Werks","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Werks}" />
                 </Column>
                 <Column>
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Gsber", "columnIndex":"9", "leadingProperty": "Gsber","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Gsber", "columnIndex":"10", "leadingProperty": "Gsber","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Gsber}" />
                 </Column>
                 <Column>
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Kokrs", "columnIndex":"10", "leadingProperty": "Kokrs","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Kokrs", "columnIndex":"11", "leadingProperty": "Kokrs","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Kokrs}" />
                 </Column>
                 <Column>
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Waers", "columnIndex":"11", "leadingProperty": "Waers","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Waers", "columnIndex":"12", "leadingProperty": "Waers","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Waers}" />
                 </Column>
                 <Column>
                     <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Astnr", "columnIndex":"12", "leadingProperty": "Astnr","customColumn":true}' />
+                        <core:CustomData key="p13nData" value='\{"columnKey": "Astnr", "columnIndex":"13", "leadingProperty": "Astnr","customColumn":true}' />
                     </customData>
                     <Text text="{i18n>Astnr}" />
                 </Column>
-                <Column>
-                    <customData>
-                        <core:CustomData key="p13nData" value='\{"columnKey": "Kostv", "columnIndex":"13", "leadingProperty": "Kostv","customColumn":true}' />
-                    </customData>
-                    <Text text="{i18n>Kostl}" />
-                </Column>
+                
                 <Column>
                     <customData>
                         <core:CustomData key="p13nData" value='\{"columnKey": "Saknr", "columnIndex":"14", "leadingProperty": "Saknr","customColumn":true}' />
@@ -116,6 +117,7 @@
             <items>
                 <ColumnListItem type="Navigation">
                     <cells>
+                        <Text text="{Kostv}" />
                         <Text text="{Aufnr}" />
                         <Text text="{Auart}" />
                         <Text text="{Autyp}" />
@@ -133,7 +135,6 @@
                         <Text text="{Kokrs}" />
                         <Text text="{Waers}" />
                         <Text text="{Astnr}" />
-                        <Text text="{Kostv}" />
                         <Text text="{Saknr}" />
                     </cells>
                 </ColumnListItem>
