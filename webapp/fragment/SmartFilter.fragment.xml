@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m"
 	xmlns:core="sap.ui.core"
 	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar">
-	<smartFilterBar:SmartFilterBar id="smartFilterBar" useToolbar="false" showClearOnFB="true" entitySet="ServiceOrdersSet" clear=".onClearFilter" persistencyKey="PlanningKey" smartVariant="PlanningVariant" search="onFilterSearch" beforeVariantFetch="onBeforeVariantFetch" afterVariantLoad="onAfterVariantLoad">
+	<smartFilterBar:SmartFilterBar id="smartFilterBar" useToolbar="false" showClearOnFB="true" initialise=".onFilterInitialise" entitySet="ServiceOrdersSet" clear=".onClearFilter" persistencyKey="PlanningKey" smartVariant="PlanningVariant" search="onFilterSearch" beforeVariantFetch="onBeforeVariantFetch" afterVariantLoad="onAfterVariantLoad">
 		<smartFilterBar:controlConfiguration>
 			<smartFilterBar:ControlConfiguration key="Aufnr" index="0" label="{/#ServiceOrders/Aufnr/@sap:label}" visibleInAdvancedArea="true" displayBehaviour="descriptionOnly">
 				<smartFilterBar:customControl>
@@ -36,17 +36,17 @@
 					</MultiComboBox>
 				</smartFilterBar:customControl>
 			</smartFilterBar:ControlConfiguration>
-			<!-- <smartFilterBar:ControlConfiguration key="Aenam" index="4" label="{/#ServiceOrders/Aenam/@sap:label}" visibleInAdvancedArea="true" displayBehaviour="descriptionOnly">
+			<smartFilterBar:ControlConfiguration key="Ernam" index="4" label="{/#ServiceOrders/Ernam/@sap:label}" visibleInAdvancedArea="true" displayBehaviour="descriptionOnly">
 				<smartFilterBar:customControl>
-					<MultiComboBox items="{path:'/CostCenterSet'}">
-						<core:ListItem text="{Aenam}" key="{Aenam}"></core:ListItem>
+					<MultiComboBox id="idErnam" items="{path:'/ERNAMSet'}">
+						<core:ListItem text="{Ernam}" key="{Ernam}"></core:ListItem>
 						<customData>
-							<core:CustomData key="filterProp" value="Aenam"/>
+							<core:CustomData key="filterProp" value="Ernam"/>
 							<core:CustomData key="filterOperator" value="EQ"/>
 						</customData>
 					</MultiComboBox>
 				</smartFilterBar:customControl>
-			</smartFilterBar:ControlConfiguration> -->
+			</smartFilterBar:ControlConfiguration>
 		</smartFilterBar:controlConfiguration>
 	</smartFilterBar:SmartFilterBar>
 </core:FragmentDefinition>

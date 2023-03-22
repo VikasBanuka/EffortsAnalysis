@@ -20,7 +20,7 @@ sap.ui.define([
 		 * @private
 		 */
 		_onRouteMatched: function () {
-			this.byId("idOrdersTable").clearSelection();
+			// this.byId("idOrdersTable").clearSelection();
             this.byId("smartFilterBar").addEventDelegate({
                 onAfterRendering: function () {
                     this.attachTokenValidatorForFilterbar(
@@ -240,6 +240,14 @@ sap.ui.define([
 					});
 				}
 				this.onVariantSelect();
+			},
+			onFilterInitialise: function(oEvent){
+				const oView = this.getView();
+				const oFilterBar = oEvent.getSource();
+				this._setDefaultDateFilter(oFilterBar);
+				this.byId("POSmartTable").rebindTable();
+			},
+			_setDefaultDateFilter: function(){
 			},
         });
     });

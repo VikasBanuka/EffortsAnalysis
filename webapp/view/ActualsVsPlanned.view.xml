@@ -1,18 +1,13 @@
-<mvc:View controllerName="cis.effortsanalysis.controller.ActualsVsPlanned" xmlns:l="sap.ui.layout" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f" xmlns:smartVariantManagement="sap.ui.comp.smartvariants" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-    <!-- <f:DynamicPage busy="{appView>/busy}" busyIndicatorDelay="{appView>/delay}" headerExpanded="true">
-        <f:title>
-            <f:DynamicPageTitle>
-                <f:heading>
-                    <Title text="Actuals Vs Planned" />
-                </f:heading>
-            </f:DynamicPageTitle>
-        </f:title>
-
-        <f:content> -->
-        	<Page
-		title="Actuals Vs Planned" showNavButton="true" navButtonPress=".onNavBackToOrdersScreen">
+<mvc:View controllerName="cis.effortsanalysis.controller.ActualsVsPlanned"
+    xmlns:l="sap.ui.layout"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:f="sap.f"
+    xmlns:smartVariantManagement="sap.ui.comp.smartvariants"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page title="Actuals Vs Planned" showNavButton="true" navButtonPress=".onNavBackToOrdersScreen">
         <content>
-            <!-- <core:Fragment fragmentName="cis.effortsanalysis.fragment.actualvsplannedSmartTable" type="XML" /> -->
             <Table id="idActualsVsPlannedTable" class="sapUiSmallMarginEnd" mode="None" inset="false" sticky="ColumnHeaders" items="{actualsVsPlannedView>/actualsVsPlannedData}" growing="true" growingScrollToLoad="true" width="auto">
                 <columns>
                     <Column width="12em">
@@ -66,14 +61,12 @@
                 </items>
             </Table>
             <VBox>
-            <OverflowToolbar>
-            <ToolbarSpacer/>
-            <Text id="idSumofActuals"/>
-            <Text id="idSumofPlanned"/>
-            </OverflowToolbar>
+                <OverflowToolbar>
+                    <ToolbarSpacer/>
+                    <Text id="idSumofActuals"/>
+                    <Text id="idSumofPlanned"/>
+                </OverflowToolbar>
             </VBox>
-            </content>
-            </Page>
-         <!-- </f:content>
-    </f:DynamicPage> -->
+        </content>
+    </Page>
 </mvc:View>
