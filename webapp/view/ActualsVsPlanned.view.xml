@@ -30,6 +30,9 @@
                     </Column>
                     <Column>
                         <Text text="Unit of Measure" />
+                        <footer>
+                            <Text text="Total"/>
+                        </footer>
                     </Column>
                     <Column>
                         <Text text="Plan Value TranCurr" />
